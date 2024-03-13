@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ROSHAMBO </h1>
+
+</body>
+
+<script>
+    function getComputerChoice (){
+
+        let randomRPS = Math.floor(Math.random()*3 + 1);
+        
+        if (randomRPS == 1){
+            return "rock"
+        }
+        if (randomRPS == 2 ){
+            return "paper"
+
+        }else {
+            return "scissor"
+        }
+        return randomRPS 
+
+    }
+
+    function singleRound ( ){
+
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+
+        if ( playerSelection == "paper" && computerSelection == "rock" || playerSelection == "rock" && computerSelection == "scissor" ||playerSelection == "scissor" && computerSelection == "paper"){
+            return "I win"
+        }else if (playerSelection == computerSelection){
+            return "tie"
+        } else {
+            return "computer wins"
+        }
+
+     
+    }
+
+    function playGame() {
+            let playerScore = 0;
+            let computerScore = 0;
+            let roundsPlayed = 0;
+
+            while (roundsPlayed < 5) {
+                let result = singleRound();
+
+                if (result === "I win") {
+                    playerScore++;
+                    roundsPlayed++;
+                } else if (result === "computer wins") {
+                    computerScore++;
+                    roundsPlayed++;
+                }
+            }
+
+            console.log("Player Score:", playerScore);
+            console.log("Computer Score:", computerScore);
+        }
+
+        playGame();
+    
+
+
+        // function playGame(){
+
+        // let playerScore = 0;
+        // let computerScore = 0;
+        // let roundsPlayed = 0;
+        
+
+        //   for (let i = 1; i <= 5; i++){
+            
+            
+        //     if(singleRound() == "I win"){
+        //          playerScore++;
+        //          roundsPlayed++
+        //     }
+        //      else if(singleRound() == "computer wins"){
+        //          computerScore++;
+        //          roundsPlayed++;
+        //      } 
+
+            
+
+        //   }
+        //   console.log("Player Score: " + playerScore, i)
+        //      console.log("computer score: " + computerScore, i)
+         
+        // }
+
+
+  
+
+
+    
+
+</script>
+</html>
